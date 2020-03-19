@@ -13,11 +13,15 @@ import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './nav/nav-bar/nav-bar.component';
 import { MaterialModule } from './material/material.module';
+import { LeftPanelComponent } from './nav/left-panel/left-panel.component';
+import { MainViewComponent } from './map/main-view/main-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent
+    NavBarComponent,
+    LeftPanelComponent,
+    MainViewComponent
   ],
   imports: [
     BrowserModule,

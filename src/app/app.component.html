@@ -1,17 +1,3 @@
 <app-nav-bar></app-nav-bar>
 
-<ul>
-  <li class="text" *ngFor="let item of items | async">
-    <mat-icon>home</mat-icon>
-    <span> {{item.name}}</span>
-  </li>
-</ul>
-
-<div style="height: 100vh"
-     leaflet
-     [leafletOptions]="options"
-     [leafletLayers]="layers"
-      >
-</div>
-
-<router-outlet></router-outlet>
+<app-left-panel></app-left-panel>
