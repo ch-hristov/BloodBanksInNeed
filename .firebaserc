@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "hospitalsinneed": {
+      "hosting": {
+        "HospitalsInNeed": [
+          "hospitalsinneed"
+        ]
+      }
+    }
+  }
+}
