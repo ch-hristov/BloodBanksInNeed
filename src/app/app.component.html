@@ -1,9 +1,16 @@
 <h1>Hospitals in need</h1>
 
+<ul>
+  <li class="text" *ngFor="let item of items | async">
+    {{item.name}}
+  </li>
+</ul>
 
 <div style="height: 100vh"
      leaflet
-     [leafletOptions]="options">
+     [leafletOptions]="options"
+     [leafletLayers]="layers"
+      >
 </div>
 
 <router-outlet></router-outlet>
