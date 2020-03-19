@@ -15,9 +15,9 @@ postcode: string
 }
 ```
 
-## Hospital collection
+## Hospitals collection
 
-> Collection name `hostpitals`
+> Collection name `hospitals`
 
 ```
 {
