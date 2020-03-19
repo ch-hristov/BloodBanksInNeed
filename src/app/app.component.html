@@ -7,11 +7,16 @@
   </li>
 </ul>
 
-<div style="height: 100vh"
-     leaflet
-     [leafletOptions]="options"
-     [leafletLayers]="layers"
-      >
+<div class="map-container">
+  <div style="height: 100%;width: 100%;"
+       leaflet
+       [leafletOptions]="options"
+       [leafletLayers]="layers"
+       class="leaflet"
+  >
+  </div>
+  <app-right-panel></app-right-panel>
 </div>
+
 
 <router-outlet></router-outlet>
