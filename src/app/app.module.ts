@@ -11,11 +11,13 @@ import { AppComponent } from './app.component';
 
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatIconModule } from '@angular/material/icon';
+import { NavBarComponent } from './nav/nav-bar/nav-bar.component';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,7 @@ import { MatIconModule } from '@angular/material/icon';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
