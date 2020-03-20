@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { tileLayer, latLng, marker, icon } from 'leaflet';
@@ -18,25 +18,39 @@ export class MainViewComponent implements OnInit {
     layers: [
       tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' })
     ],
-    zoom: 17,
-    center: latLng(51.14277, 17.0666)
+    zoom: 12,
+    zoomControl: false,
+    center: latLng(51.110790, 17.031870)
   };
 
-  layers = [
-    marker([ 51.14277, 17.0666 ], {
-    icon: icon({
-      iconUrl: 'leaflet/marker-icon.png',
-      shadowUrl: 'leaflet/marker-shadow.png'
-    })
-    })
-  ];
+  layers = [];
 
-  constructor(firestore: AngularFirestore) {
-    console.info('firestore', firestore);
-    this.items = firestore.collection('hospitals').valueChanges();
+  constructor(private zone: NgZone, firestore: AngularFirestore) {
+    firestore.collection('hospitals')
+      .valueChanges().subscribe(hospitals => this.prepareMarkers(hospitals));
   }
 
-  ngOnInit(): void {
+  prepareMarkers(positions) {
+    this.layers = positions.map(position => this.createMarker(position));
   }
+
+  createMarker(position) {
+    return marker([ position.location.latitude, position.location.longitude ], {
+      name: position.name,
+      icon: icon({
+        iconUrl: 'leaflet/marker-icon.png',
+        shadowUrl: 'leaflet/marker-shadow.png'
+      })
+    }).on('click', this.onMarkerClicked);
+  }
+
+  onMarkerClicked = (event) => {
+    // TODO: show right side panel via store dispatch
+    console.info('marker clicked', event.target.options);
+    // use ng-zonde if you like to trigger angular change detection
+    // this.zone.run(() => {}
+  }
+
+  ngOnInit(): void {}
 
 }
