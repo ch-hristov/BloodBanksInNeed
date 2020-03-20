@@ -1,3 +1,5 @@
+import { ListItem } from './list-item';
+
 export interface BloodBank {
   name: string;
   location: any;
@@ -5,4 +7,6 @@ export interface BloodBank {
   city: string;
   country: string;
   postcode: string;
+  needs: ListItem[];
+  offers: ListItem[];
 }

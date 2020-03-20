@@ -25,13 +25,12 @@
 
 <div class="panel-container" [ngSwitch]="selectedPanel">
   <div *ngSwitchCase="'Contact'" [@enterTrigger]="'fadeIn'">
-    <div>FOO</div>
+    <!-- TODO contact component -->
   </div>
   <div *ngSwitchCase="'Needs'" [@enterTrigger]="'fadeIn'">
-    <div>BAR</div>
+    <app-list [items]="bloodBank.needs"></app-list>
   </div>
   <div *ngSwitchCase="'Offers'" [@enterTrigger]="'fadeIn'">
-    <div>LECIMY</div>
+    <app-list [items]="bloodBank.offers"></app-list>
   </div>
-
 </div>
