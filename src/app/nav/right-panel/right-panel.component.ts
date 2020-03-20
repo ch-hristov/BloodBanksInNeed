@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BloodBankFacade } from '../../state/blood-bank.facade';
 
 @Component({
   selector: 'app-right-panel',
@@ -6,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./right-panel.component.scss']
 })
 export class RightPanelComponent implements OnInit {
-  isRightNavOpened: boolean = true;
+  isRightNavOpened = true;
+  bloodBank = this.bloodBankFacade.selectedBloodBank$;
 
-  constructor() { }
+  constructor(private bloodBankFacade: BloodBankFacade) { }
 
   ngOnInit(): void {
   }

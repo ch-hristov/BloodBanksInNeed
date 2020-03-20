@@ -1,0 +1,37 @@
+<div class="panel-header">
+
+  <app-one-action
+    (click)="selectedPanel = 'Contact'"
+    [icon]="'perm_contact_calendar'"
+    [title]="'Contact'"
+    [isActive]="selectedPanel === 'Contact'"
+  ></app-one-action>
+
+  <app-one-action
+    (click)="selectedPanel = 'Needs'"
+    [icon]="'priority_high'"
+    [title]="'Needs'"
+    [isActive]="selectedPanel === 'Needs'"
+  ></app-one-action>
+
+  <app-one-action
+    (click)="selectedPanel = 'Offers'"
+    [icon]="'local_offer'"
+    [title]="'Offers'"
+    [isActive]="selectedPanel === 'Offers'"
+  ></app-one-action>
+
+</div>
+
+<div class="panel-container" [ngSwitch]="selectedPanel">
+  <div *ngSwitchCase="'Contact'" [@enterTrigger]="'fadeIn'">
+    <div>FOO</div>
+  </div>
+  <div *ngSwitchCase="'Needs'" [@enterTrigger]="'fadeIn'">
+    <div>BAR</div>
+  </div>
+  <div *ngSwitchCase="'Offers'" [@enterTrigger]="'fadeIn'">
+    <div>LECIMY</div>
+  </div>
+
+</div>
