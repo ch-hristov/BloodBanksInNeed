@@ -19,9 +19,12 @@ import {MatBadgeModule} from '@angular/material/badge';
 import { OnMapInfoModule } from './map/on-map-info/on-map-info.module';
 
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 import { bloodBankReducer } from './state/blood-bank.reducer';
 import { RightPanelComponent } from './nav/right-panel/right-panel.component';
 import { MainContainerComponent } from './main-container/main-container.component';
+import { BloodBankEffects } from './state/blood-bank.effects';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -41,8 +44,10 @@ import { MainContainerComponent } from './main-container/main-container.componen
     BrowserAnimationsModule,
     MaterialModule,
     MatBadgeModule,
-    StoreModule.forRoot({'bloodBanks': bloodBankReducer }),
-    OnMapInfoModule
+    StoreModule.forRoot({bloodBanks: bloodBankReducer }),
+    EffectsModule.forRoot([BloodBankEffects]),
+    OnMapInfoModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
