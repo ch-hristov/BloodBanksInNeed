@@ -8,7 +8,7 @@ import { BloodBankFacade } from '../../state/blood-bank.facade';
 })
 export class RightPanelComponent implements OnInit {
   isRightNavOpened = true;
-  bloodBank = this.bloodBankFacade.selectedBloodBank$;
+  bloodBank$ = this.bloodBankFacade.selectedBloodBank$;
 
   constructor(private bloodBankFacade: BloodBankFacade) { }
 

@@ -1,9 +1,15 @@
 <div class="list-container">
-  <mat-list>
-    <div mat-subheader>{{ title }}</div>
-    <mat-list-item *ngFor="let item of items">
-      <div mat-line *ngIf="item.name">{{ item.name }}</div>
-      <div mat-line *ngIf="item.quantity">Quantity: <strong>{{ item.quantity }}</strong></div>
+  <mat-list class="list">
+    <div mat-subheader *ngIf="title">{{ title }}</div>
+    <mat-list-item *ngFor="let item of items" class="item">
+      <span mat-line *ngIf="item.name" class="item-name">{{ item.name }}</span>
+      <span *ngIf="item.quantity"
+            class="item-quantity"
+            matTooltip="Number of items"
+            matTooltipPosition="before"
+      >
+        {{ item.quantity }}
+      </span>
     </mat-list-item>
   </mat-list>
 </div>

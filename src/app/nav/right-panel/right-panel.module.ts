@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { OneActionComponent } from './action-panel/one-action/one-action.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [RightPanelComponent, ActionPanelComponent, OneActionComponent],
@@ -15,7 +16,8 @@ import { OneActionComponent } from './action-panel/one-action/one-action.compone
     CommonModule,
     MatSidenavModule,
     MatIconModule,
-    MatTabsModule
+    MatTabsModule,
+    SharedModule
   ],
   exports: [
     RightPanelComponent

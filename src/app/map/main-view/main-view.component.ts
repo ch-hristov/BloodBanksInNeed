@@ -27,6 +27,7 @@ export class MainViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.bloodBankFacade.selectedBloodBank$.subscribe(res => console.log(res))
     this.bloodBankFacade.loadAll(); // this should be in resolver
     this.bloodBankFacade.allBloodBanks$
       .subscribe(hospitals => this.prepareMarkers(hospitals));

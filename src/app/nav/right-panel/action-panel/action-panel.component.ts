@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { BloodBank } from '../../../models/blood-bank';
 
 type panelType = 'Contact' | 'Needs' | 'Offers';  // TODO this should be in feature store
 
@@ -17,7 +18,7 @@ type panelType = 'Contact' | 'Needs' | 'Offers';  // TODO this should be in feat
   ]
 })
 export class ActionPanelComponent implements OnInit {
-
+  @Input() bloodBank: BloodBank;
   selectedPanel: panelType = 'Contact'; // TODO this should be in feature store
 
   constructor() {

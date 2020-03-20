@@ -4,6 +4,7 @@ import { ListComponent } from './list/list.component';
 
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   imports: [
@@ -11,7 +12,8 @@ import { MatIconModule } from '@angular/material/icon';
 
     // Material imports
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatTooltipModule,
   ],
   declarations: [
     // declare component here

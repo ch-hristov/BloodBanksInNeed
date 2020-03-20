@@ -1,8 +1,11 @@
 <mat-sidenav class="sidenav" #sidenav mode="side" [(opened)]="isRightNavOpened">
-  Content of right panel
 
-  <div *ngIf="(bloodBank | async)">
-    <app-action-panel></app-action-panel>
+
+  <div>TODO header</div>
+  <div>TODO progress-bar</div>
+
+  <div *ngIf="(bloodBank$ | async)">
+    <app-action-panel [bloodBank]="(bloodBank$ | async)"></app-action-panel>
   </div>
 
 </mat-sidenav>
