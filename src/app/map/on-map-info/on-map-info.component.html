@@ -1,5 +1,6 @@
 <div>
-    <div *ngFor="let name of mainCategories" class="main-section-container">
+    <div *ngFor="let name of mainCategories"
+         class="main-section-container">
         <span class="main-category-name">{{ name }}</span>
         <div class="all-resources-container">
             <div *ngFor="let object of data[name]"

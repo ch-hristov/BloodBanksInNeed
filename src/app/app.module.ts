@@ -15,8 +15,8 @@ import { NavBarComponent } from './nav/nav-bar/nav-bar.component';
 import { MaterialModule } from './material/material.module';
 import { LeftPanelComponent } from './nav/left-panel/left-panel.component';
 import { MainViewComponent } from './map/main-view/main-view.component';
-import { OnMapInfoComponent } from './map/on-map-info/on-map-info.component';
 import {MatBadgeModule} from '@angular/material/badge';
+import { OnMapInfoModule } from './map/on-map-info/on-map-info.module';
 
 import { StoreModule } from '@ngrx/store';
 import { bloodBankReducer } from './state/blood-bank.reducer';
@@ -27,7 +27,6 @@ import { bloodBankReducer } from './state/blood-bank.reducer';
     NavBarComponent,
     LeftPanelComponent,
     MainViewComponent,
-    OnMapInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +37,8 @@ import { bloodBankReducer } from './state/blood-bank.reducer';
     BrowserAnimationsModule,
     MaterialModule,
     MatBadgeModule,
-    StoreModule.forRoot({'bloodBanks': bloodBankReducer })
+    StoreModule.forRoot({'bloodBanks': bloodBankReducer }),
+    OnMapInfoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
