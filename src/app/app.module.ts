@@ -27,6 +27,7 @@ import { SharedModule } from './shared/shared.module';
 import { RightPanelModule } from './nav/right-panel/right-panel.module';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { MatButtonModule } from '@angular/material/button';
     SharedModule,
     RightPanelModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
