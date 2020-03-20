@@ -25,7 +25,9 @@ import { MainContainerComponent } from './main-container/main-container.componen
 import { BloodBankEffects } from './state/blood-bank.effects';
 import { SharedModule } from './shared/shared.module';
 import { RightPanelModule } from './nav/right-panel/right-panel.module';
-import {MatListModule} from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -44,13 +46,14 @@ import {MatListModule} from '@angular/material/list';
     BrowserAnimationsModule,
     MaterialModule,
     MatBadgeModule,
-    StoreModule.forRoot({bloodBanks: bloodBankReducer }),
+    StoreModule.forRoot({bloodBanks: bloodBankReducer}),
     EffectsModule.forRoot([BloodBankEffects]),
     OnMapInfoModule,
     SharedModule,
     RightPanelModule,
+    MatMenuModule,
+    MatButtonModule,
     MatListModule
-    
   ],
   providers: [],
   bootstrap: [AppComponent]
