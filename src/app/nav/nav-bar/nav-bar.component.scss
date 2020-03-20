@@ -1,0 +1,25 @@
+.toolbar {
+  display: inline-block;
+  &__title {
+    float: left;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__country {
+    float: right;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__flag {
+      background: url(https://dl.dropboxusercontent.com/s/izcyieh1iatr4n5/flags.png) no-repeat;
+      display: inline-block;
+      width: 16px;
+      height: 11px;
+      background-position: -220px -225px;
+    }
+  }
+}

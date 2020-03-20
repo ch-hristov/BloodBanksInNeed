@@ -1,4 +1,13 @@
-<mat-toolbar>
-  <span>{{ title }}: </span>
-  <span>{{ (bloodBank$ | async)?.name }}</span>
+<mat-toolbar class="toolbar">
+  <div class="toolbar__title">
+    <span>{{ title }}: </span>
+    <span>{{ (bloodBank$ | async)?.name }}</span>
+  </div>
+  <div class="toolbar__country">
+    <div class="toolbar__country__flag" #countryFlagDiv></div>
+    <button mat-button [matMenuTriggerFor]="countryListElement">{{countryFlag}}</button>
+    <mat-menu #countryListElement="matMenu">
+      <button mat-menu-item *ngFor="let country of countryList" (click)="changeFlag(country)">{{country.code}}</button>
+    </mat-menu>
+  </div>
 </mat-toolbar>
