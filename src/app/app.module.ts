@@ -15,16 +15,16 @@ import { NavBarComponent } from './nav/nav-bar/nav-bar.component';
 import { MaterialModule } from './material/material.module';
 import { LeftPanelComponent } from './nav/left-panel/left-panel.component';
 import { MainViewComponent } from './map/main-view/main-view.component';
-import {MatBadgeModule} from '@angular/material/badge';
+import { MatBadgeModule } from '@angular/material/badge';
 import { OnMapInfoModule } from './map/on-map-info/on-map-info.module';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { bloodBankReducer } from './state/blood-bank.reducer';
-import { RightPanelComponent } from './nav/right-panel/right-panel.component';
 import { MainContainerComponent } from './main-container/main-container.component';
 import { BloodBankEffects } from './state/blood-bank.effects';
 import { SharedModule } from './shared/shared.module';
+import { RightPanelModule } from './nav/right-panel/right-panel.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,6 @@ import { SharedModule } from './shared/shared.module';
     NavBarComponent,
     LeftPanelComponent,
     MainViewComponent,
-    RightPanelComponent,
     MainContainerComponent,
   ],
   imports: [
@@ -47,7 +46,8 @@ import { SharedModule } from './shared/shared.module';
     StoreModule.forRoot({bloodBanks: bloodBankReducer }),
     EffectsModule.forRoot([BloodBankEffects]),
     OnMapInfoModule,
-    SharedModule
+    SharedModule,
+    RightPanelModule
   ],
   providers: [],
   bootstrap: [AppComponent]

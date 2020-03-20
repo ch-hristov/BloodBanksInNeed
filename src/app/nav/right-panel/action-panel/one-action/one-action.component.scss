@@ -1,0 +1,42 @@
+.one-action {
+  margin: 0 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #1A73E8;
+  transition: background-color ease-in-out .2s;
+
+  &:hover {
+    background-color: #F1F3F4;
+  }
+}
+
+.circle-icon {
+  color: #1A73E8;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+}
+
+.active, .active:hover {
+  background-color: #1A73E8;
+
+  .circle-icon {
+    color: #FFFFFF;
+  }
+}
+.action-title {
+  letter-spacing: 0.025em;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #1A73E8;
+}
