@@ -35,7 +35,7 @@ export class MainViewComponent implements OnInit {
   }
 
   createMarker(position) {
-    return marker([ position.location.latitude, position.location.longitude ], {
+    return marker([ position.location.latitude, position.location.longitude ], <any>{
       name: position.name,
       icon: icon({
         iconUrl: 'leaflet/marker-icon.png',
