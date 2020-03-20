@@ -19,7 +19,9 @@ import {MatBadgeModule} from '@angular/material/badge';
 import { OnMapInfoModule } from './map/on-map-info/on-map-info.module';
 
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 import { bloodBankReducer } from './state/blood-bank.reducer';
+import { BloodBankEffects } from './state/blood-bank.effects';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { bloodBankReducer } from './state/blood-bank.reducer';
     BrowserAnimationsModule,
     MaterialModule,
     MatBadgeModule,
-    StoreModule.forRoot({'bloodBanks': bloodBankReducer }),
+    StoreModule.forRoot({bloodBanks: bloodBankReducer }),
+    EffectsModule.forRoot([BloodBankEffects]),
     OnMapInfoModule
   ],
   providers: [],
