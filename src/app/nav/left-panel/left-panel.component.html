@@ -1,3 +1,32 @@
-<mat-sidenav class="nav-left__sidenav" #sidenav mode="side" [(opened)]="isLeftNavOpened">
-  Content TBD
+<mat-sidenav class="nav-left__sidenav max-height-100"
+             #sidenav
+             mode="side"
+             [(opened)]="isLeftNavOpened">
+  <mat-list>
+    <div *ngFor="let city of bloodBanksCities"
+         class="top-bottom-margin">
+      <div mat-subheader
+           class="city-label">{{ city }}</div>
+      <mat-list-item *ngFor="let bloodBank of bloodBanksInNeed[city]"
+                     class="clickable"
+                     (click)="handleBloodBankClick(bloodBank)">
+        <div class="grid">
+          <div class="flex top-bottom-margin left-center">
+            <mat-icon mat-list-icon>local_hospital</mat-icon>
+            <div mat-line
+                 class="center blood-bank-label">{{bloodBank.name}}</div>
+          </div>
+          <div class="flex">
+            Needed blood types:
+            <div *ngFor="let neededBlood of bloodBank.neededSupply"
+                 mat-line
+                 class="left-right-margin blood-type-label">{{ neededBlood }}</div>
+          </div>
+        </div>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </div>
+  </mat-list>
+
+  <div *ngIf="bloodBanksCities.length === 0" class="blood-bank-label"> Hurray! No blood bank is short on blood :)</div>
 </mat-sidenav>

@@ -7,13 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class OnMapInfoComponent implements OnInit {
   @Input() data = {
-    'RhD(+) plus': {
+    rhPlus: {
       A: 90,
       B: 80,
       AB: 10,
       0: 5
     },
-    'RhD(-) minus': {
+    rhMinus: {
       A: 90,
       B: 80,
       AB: 10,
@@ -31,7 +31,7 @@ export class OnMapInfoComponent implements OnInit {
 
   parseDataToArray() {
     for (let mainCategory of Object.keys(this.data)) {
-      this.mainCategories.push(mainCategory)
+      this.mainCategories.push( { mainCategory, name: mainCategory === 'rhPlus' ? 'RhD(+) plus' : 'RhD(-) minus' })
       let tempArray = []
       for (let secondaryCategory of Object.keys(this.data[mainCategory])) {
         tempArray.push({ name: secondaryCategory, value: this.data[mainCategory][secondaryCategory] })

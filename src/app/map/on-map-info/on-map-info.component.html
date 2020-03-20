@@ -1,9 +1,9 @@
 <div>
-    <div *ngFor="let name of mainCategories"
+    <div *ngFor="let mainCategory of mainCategories"
          class="main-section-container">
-        <span class="main-category-name">{{ name }}</span>
+        <span class="main-category-name">{{ mainCategory.name }}</span>
         <div class="all-resources-container">
-            <div *ngFor="let object of data[name]"
+            <div *ngFor="let object of data[mainCategory.mainCategory]"
                  class="resource-container">
                 <div class="item-and-name-container">
                     <span class="material-icons item-class"
@@ -19,5 +19,4 @@
             </div>
         </div>
     </div>
-
 </div>
