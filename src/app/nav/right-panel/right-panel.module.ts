@@ -7,6 +7,8 @@ import { ActionPanelComponent } from './action-panel/action-panel.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { OneActionComponent } from './action-panel/one-action/one-action.component';
 import { SharedModule } from '../../shared/shared.module';
 
@@ -17,7 +19,9 @@ import { SharedModule } from '../../shared/shared.module';
     MatSidenavModule,
     MatIconModule,
     MatTabsModule,
-    SharedModule
+    SharedModule,
+    MatProgressBarModule,
+    MatTooltipModule,
   ],
   exports: [
     RightPanelComponent
