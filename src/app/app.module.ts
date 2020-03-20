@@ -15,8 +15,8 @@ import { NavBarComponent } from './nav/nav-bar/nav-bar.component';
 import { MaterialModule } from './material/material.module';
 import { LeftPanelComponent } from './nav/left-panel/left-panel.component';
 import { MainViewComponent } from './map/main-view/main-view.component';
-import { OnMapInfoComponent } from './map/on-map-info/on-map-info.component';
 import {MatBadgeModule} from '@angular/material/badge';
+import { OnMapInfoModule } from './map/on-map-info/on-map-info.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,6 @@ import {MatBadgeModule} from '@angular/material/badge';
     NavBarComponent,
     LeftPanelComponent,
     MainViewComponent,
-    OnMapInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +33,7 @@ import {MatBadgeModule} from '@angular/material/badge';
     AngularFirestoreModule,
     BrowserAnimationsModule,
     MaterialModule,
-    MatBadgeModule
+    OnMapInfoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
