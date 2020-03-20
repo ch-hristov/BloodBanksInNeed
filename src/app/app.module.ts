@@ -25,6 +25,7 @@ import { MainContainerComponent } from './main-container/main-container.componen
 import { BloodBankEffects } from './state/blood-bank.effects';
 import { SharedModule } from './shared/shared.module';
 import { RightPanelModule } from './nav/right-panel/right-panel.module';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,9 @@ import { RightPanelModule } from './nav/right-panel/right-panel.module';
     EffectsModule.forRoot([BloodBankEffects]),
     OnMapInfoModule,
     SharedModule,
-    RightPanelModule
+    RightPanelModule,
+    MatListModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
