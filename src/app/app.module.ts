@@ -18,6 +18,9 @@ import { MainViewComponent } from './map/main-view/main-view.component';
 import {MatBadgeModule} from '@angular/material/badge';
 import { OnMapInfoModule } from './map/on-map-info/on-map-info.module';
 
+import { StoreModule } from '@ngrx/store';
+import { bloodBankReducer } from './state/blood-bank.reducer';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +36,8 @@ import { OnMapInfoModule } from './map/on-map-info/on-map-info.module';
     AngularFirestoreModule,
     BrowserAnimationsModule,
     MaterialModule,
+    MatBadgeModule,
+    StoreModule.forRoot({'bloodBanks': bloodBankReducer }),
     OnMapInfoModule
   ],
   providers: [],
