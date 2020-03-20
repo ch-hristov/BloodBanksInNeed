@@ -39,7 +39,7 @@ export class OnMapInfoComponent implements OnInit {
       this.data[mainCategory] = tempArray
     }
     console.log(this.data);
-    
+
   }
 
 }
