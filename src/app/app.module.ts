@@ -20,6 +20,8 @@ import { OnMapInfoModule } from './map/on-map-info/on-map-info.module';
 
 import { StoreModule } from '@ngrx/store';
 import { bloodBankReducer } from './state/blood-bank.reducer';
+import { RightPanelComponent } from './nav/right-panel/right-panel.component';
+import { MainContainerComponent } from './main-container/main-container.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { bloodBankReducer } from './state/blood-bank.reducer';
     NavBarComponent,
     LeftPanelComponent,
     MainViewComponent,
+    RightPanelComponent,
+    MainContainerComponent,
   ],
   imports: [
     BrowserModule,
