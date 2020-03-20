@@ -1,3 +1,12 @@
+:host {
+  position: absolute;
+  display: none;
+  z-index: 1000;
+  top: 100px;
+  left: 100px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
 .main-category-name {
     color: black;
     font-size: 20px;

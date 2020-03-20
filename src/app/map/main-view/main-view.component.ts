@@ -31,7 +31,11 @@ export class MainViewComponent implements OnInit {
   }
 
   prepareMarkers(positions) {
-    this.layers = positions.map(position => this.createMarker(position));
+
+
+    this.layers = positions
+      // .filter(position => 'Wrocław' === position.name)
+      .map(position => this.createMarker(position));
   }
 
   createMarker(position) {
@@ -47,6 +51,8 @@ export class MainViewComponent implements OnInit {
       opacity: 0.9,
       direction: 'top'
     })
+    // .on('add', this.onMarkerDisplay)
+    .on('mouseover', this.onMarkerActive)
     .on('click', this.onMarkerClicked);
   }
 
@@ -55,6 +61,18 @@ export class MainViewComponent implements OnInit {
     console.info('marker clicked', event.target.options);
     // use ng-zonde if you like to trigger angular change detection
     // this.zone.run(() => {}
+  }
+
+  onMarkerDisplay = (event) => {
+    console.log('on marker display', event);
+  }
+
+  onMarkerActive = (event) => {
+    let info = document.querySelector('#mapInfo1') || {};
+
+    info.style.left = `${event.layerPoint.x - 143 }px`;
+    info.style.top = `${event.layerPoint.y +  40 }px`;
+    info.style.display = 'block';
   }
 
   ngOnInit(): void {}
