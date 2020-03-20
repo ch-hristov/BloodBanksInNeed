@@ -1,0 +1,22 @@
+<div>
+    <div *ngFor="let name of mainCategories" class="main-section-container">
+        <span class="main-category-name">{{ name }}</span>
+        <div class="all-resources-container">
+            <div *ngFor="let object of data[name]"
+                 class="resource-container">
+                <div class="item-and-name-container">
+                    <span class="material-icons item-class"
+                          [matBadge]="object.value"
+                          matBadgeOverlap="false"
+                          matBadgeColor="primary">
+                        opacity
+                    </span>
+                    <span class="name-class">
+                        {{ object.name }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

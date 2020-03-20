@@ -1,0 +1,43 @@
+.main-category-name {
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.all-resources-container {
+    display: flex;
+    margin: 10px 0px;
+}
+
+.main-section-container {
+    border: solid 1px rgb(170, 170, 170);
+    border-radius: 5px;
+    padding: 0px 15px;
+    width: fit-content;
+}
+
+.resource-container {
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+}
+
+.item-class {
+    font-size: 30px;
+}
+
+.item-and-name-container {
+    display: grid;
+    text-align: center;
+    border: solid 1px rgb(170, 170, 170);
+    border-radius: 5px;
+}
+
+.name-class {
+    color: black;
+    font-size: 20px;
+    background-color: rgb(170, 170, 170);
+}

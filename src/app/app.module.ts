@@ -15,13 +15,16 @@ import { NavBarComponent } from './nav/nav-bar/nav-bar.component';
 import { MaterialModule } from './material/material.module';
 import { LeftPanelComponent } from './nav/left-panel/left-panel.component';
 import { MainViewComponent } from './map/main-view/main-view.component';
+import { OnMapInfoComponent } from './map/on-map-info/on-map-info.component';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     LeftPanelComponent,
-    MainViewComponent
+    MainViewComponent,
+    OnMapInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { MainViewComponent } from './map/main-view/main-view.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
