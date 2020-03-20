@@ -22,6 +22,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { bloodBankReducer } from './state/blood-bank.reducer';
 import { BloodBankEffects } from './state/blood-bank.effects';
+import {SharedModule} from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { BloodBankEffects } from './state/blood-bank.effects';
     MatBadgeModule,
     StoreModule.forRoot({bloodBanks: bloodBankReducer }),
     EffectsModule.forRoot([BloodBankEffects]),
-    OnMapInfoModule
+    OnMapInfoModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
