@@ -41,7 +41,13 @@ export class MainViewComponent implements OnInit {
         iconUrl: 'leaflet/marker-icon.png',
         shadowUrl: 'leaflet/marker-shadow.png'
       })
-    }).on('click', this.onMarkerClicked);
+    })
+    .bindTooltip(position.name, {
+      permanent: false,
+      opacity: 0.9,
+      direction: 'top'
+    })
+    .on('click', this.onMarkerClicked);
   }
 
   onMarkerClicked = (event) => {
