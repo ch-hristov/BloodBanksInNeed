@@ -1,10 +1,10 @@
 import { Component, OnInit, NgZone } from '@angular/core';
-import { Observable } from 'rxjs';
 
 import { tileLayer, latLng, marker, icon } from 'leaflet';
-
 import { AngularFirestore } from '@angular/fire/firestore';
 import 'firebase/firestore';
+
+import { BloodBankFacade } from '../../state/blood-bank.facade';
 
 @Component({
   selector: 'app-main-view',
@@ -12,8 +12,6 @@ import 'firebase/firestore';
   styleUrls: ['./main-view.component.scss']
 })
 export class MainViewComponent implements OnInit {
-  items: Observable<any[]>;
-
   options = {
     layers: [
       tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' })
@@ -25,9 +23,14 @@ export class MainViewComponent implements OnInit {
 
   layers = [];
 
-  constructor(private zone: NgZone, firestore: AngularFirestore) {
-    firestore.collection('hospitals')
-      .valueChanges().subscribe(hospitals => this.prepareMarkers(hospitals));
+  constructor(private zone: NgZone, firestore: AngularFirestore, private bloodBankFacade: BloodBankFacade) {
+  }
+
+  ngOnInit(): void {
+    this.bloodBankFacade.loadAll(); // this should be in resolver
+    this.bloodBankFacade.allBloodBanks$
+      .subscribe(hospitals => this.prepareMarkers(hospitals));
+    // TODO unsubscribe
   }
 
   prepareMarkers(positions) {
@@ -37,6 +40,7 @@ export class MainViewComponent implements OnInit {
   createMarker(position) {
     return marker([ position.location.latitude, position.location.longitude ], <any>{
       name: position.name,
+      id: position.id,
       icon: icon({
         iconUrl: 'leaflet/marker-icon.png',
         shadowUrl: 'leaflet/marker-shadow.png'
@@ -52,11 +56,9 @@ export class MainViewComponent implements OnInit {
 
   onMarkerClicked = (event) => {
     // TODO: show right side panel via store dispatch
-    console.info('marker clicked', event.target.options);
-    // use ng-zonde if you like to trigger angular change detection
-    // this.zone.run(() => {}
+    console.log('marker clicked', event.target.options);
+    // use ng-zone if you like to trigger angular change detection
+    this.zone.run(() => this.bloodBankFacade.selectBloodBank(event.target.options.id));
   }
-
-  ngOnInit(): void {}
 
 }
