@@ -20,6 +20,7 @@ import { OnMapInfoModule } from './map/on-map-info/on-map-info.module';
 
 import { StoreModule } from '@ngrx/store';
 import { bloodBankReducer } from './state/blood-bank.reducer';
+import { FirebaseService } from './services/firebase.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { bloodBankReducer } from './state/blood-bank.reducer';
     StoreModule.forRoot({'bloodBanks': bloodBankReducer }),
     OnMapInfoModule
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

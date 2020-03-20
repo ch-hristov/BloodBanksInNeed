@@ -1,10 +1,7 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { Observable } from 'rxjs';
-
 import { tileLayer, latLng, marker, icon } from 'leaflet';
-
-import { AngularFirestore } from '@angular/fire/firestore';
-import 'firebase/firestore';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: 'app-main-view',
@@ -25,9 +22,19 @@ export class MainViewComponent implements OnInit {
 
   layers = [];
 
-  constructor(private zone: NgZone, firestore: AngularFirestore) {
-    firestore.collection('hospitals')
-      .valueChanges().subscribe(hospitals => this.prepareMarkers(hospitals));
+  constructor(private zone: NgZone, private firebaseService: FirebaseService) {
+  }
+
+  ngOnInit() {
+    this.getHospitals()
+  }
+
+
+  getHospitals() {
+    this.firebaseService.getCollectionData('hospitals')
+      .subscribe(hospitals =>
+        this.prepareMarkers(hospitals)
+      );
   }
 
   prepareMarkers(positions) {
@@ -35,19 +42,19 @@ export class MainViewComponent implements OnInit {
   }
 
   createMarker(position) {
-    return marker([ position.location.latitude, position.location.longitude ], <any>{
+    return marker([position.location.latitude, position.location.longitude], <any>{
       name: position.name,
       icon: icon({
         iconUrl: 'leaflet/marker-icon.png',
         shadowUrl: 'leaflet/marker-shadow.png'
       })
     })
-    .bindTooltip(position.name, {
-      permanent: false,
-      opacity: 0.9,
-      direction: 'top'
-    })
-    .on('click', this.onMarkerClicked);
+      .bindTooltip(position.name, {
+        permanent: false,
+        opacity: 0.9,
+        direction: 'top'
+      })
+      .on('click', this.onMarkerClicked);
   }
 
   onMarkerClicked = (event) => {
@@ -57,6 +64,5 @@ export class MainViewComponent implements OnInit {
     // this.zone.run(() => {}
   }
 
-  ngOnInit(): void {}
 
 }
