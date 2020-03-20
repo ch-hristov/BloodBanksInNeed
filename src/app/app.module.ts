@@ -21,8 +21,10 @@ import { OnMapInfoModule } from './map/on-map-info/on-map-info.module';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { bloodBankReducer } from './state/blood-bank.reducer';
+import { RightPanelComponent } from './nav/right-panel/right-panel.component';
+import { MainContainerComponent } from './main-container/main-container.component';
 import { BloodBankEffects } from './state/blood-bank.effects';
-import {SharedModule} from './shared/shared.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import {SharedModule} from './shared/shared.module';
     NavBarComponent,
     LeftPanelComponent,
     MainViewComponent,
+    RightPanelComponent,
+    MainContainerComponent,
   ],
   imports: [
     BrowserModule,
