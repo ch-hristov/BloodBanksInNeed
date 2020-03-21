@@ -26,7 +26,7 @@
 <div class="panel-container" [ngSwitch]="selectedPanel">
   <div *ngSwitchCase="'Contact'" [@enterTrigger]="'fadeIn'">
     <!-- TODO contact component -->
-    <app-contact [address]="bloodBank.address" [city]="bloodBank.city"></app-contact>
+    <app-contact [bloodBank]="bloodBank"></app-contact>
   </div>
   <div *ngSwitchCase="'Needs'" [@enterTrigger]="'fadeIn'">
     <app-list [items]="getNeeds()"></app-list>
