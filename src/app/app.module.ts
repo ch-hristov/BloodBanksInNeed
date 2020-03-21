@@ -29,6 +29,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { EditBoxComponent } from './edit-box/edit-box.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,7 @@ import { MatCardModule } from '@angular/material/card';
     LeftPanelComponent,
     MainViewComponent,
     MainContainerComponent,
+    EditBoxComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +59,9 @@ import { MatCardModule } from '@angular/material/card';
     MatMenuModule,
     MatButtonModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

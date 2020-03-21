@@ -1,0 +1,7 @@
+<mat-card class="edit-box">
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <input matInput placeholder="Add hospital description..." #inputElement>
+  </mat-form-field>
+  <button mat-button type="submit" (click)="onSave(inputElement.value)">Save</button>
+</mat-card>
