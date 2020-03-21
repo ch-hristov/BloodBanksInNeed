@@ -41,7 +41,7 @@ export const bloodBankReducer = createReducer(
     selectedId: id,
     rightPanelOpened: true
   })),
-  on(BloodBankActions.selectBloodBank, (state) => ({
+  on(BloodBankActions.closeRightPanel, (state) => ({
     ...state,
     rightPanelOpened: false
   })),
