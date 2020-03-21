@@ -11,9 +11,10 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { OneActionComponent } from './action-panel/one-action/one-action.component';
 import { SharedModule } from '../../shared/shared.module';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
 @NgModule({
-  declarations: [RightPanelComponent, ActionPanelComponent, OneActionComponent],
+  declarations: [RightPanelComponent, ActionPanelComponent, OneActionComponent, ProgressBarComponent],
   imports: [
     CommonModule,
     MatSidenavModule,
