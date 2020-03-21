@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  appName: 'Blood Banks needs help',
+  appName: ' Blood Banks in need of help',
   production: false,
   firebase: {
     // Main version

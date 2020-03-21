@@ -26,7 +26,7 @@ export class LeftPanelComponent implements OnInit {
         city: "Lublin",
         blood_supply: {
           rhPlus: {
-            A: 100,
+            A: 20,
             B: 80,
             AB: 10,
             0: 0
@@ -46,12 +46,12 @@ export class LeftPanelComponent implements OnInit {
           rhPlus: {
             A: 100,
             B: 80,
-            AB: 10,
+            AB: 40,
             0: 0
           },
           rhMinus: {
             A: 80,
-            B: 30,
+            B: 40,
             AB: 20,
             0: 15
           }
@@ -100,13 +100,13 @@ export class LeftPanelComponent implements OnInit {
           rhPlus: {
             A: 100,
             B: 80,
-            AB: 10,
+            AB: 60,
             0: 0
           },
           rhMinus: {
             A: 80,
             B: 30,
-            AB: 20,
+            AB: 80,
             0: 15
           }
         }

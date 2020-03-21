@@ -52,9 +52,10 @@ export class MainViewComponent implements OnInit {
       direction: 'top'
     })
     .on('add', (event) => {
-      setTimeout(() => this.onMarkerDisplay(event), 6000); // don't ask why :)
+      // setTimeout(() => this.onMarkerDisplay(event), 6000); // don't ask why :)
     })
     .on('mouseover', this.onMarkerActive)
+    .on('mouseout', this.onMarkerLeave)
     .on('click', this.onMarkerClicked);
   }
 
@@ -67,7 +68,7 @@ export class MainViewComponent implements OnInit {
 
   onMarkerDisplay = (event) => {
     let info = <any> document.querySelector(`#mapInfo_${event.target.options.id}`);
-
+    
     if (info) {
 
       const pixelPoint = event.target._map.project(event.target._latlng, event.target._map.getZoom());
@@ -82,15 +83,23 @@ export class MainViewComponent implements OnInit {
   }
 
 
-  onMarkerActive = (event) => {
+  onMarkerActive = (event) => {    
     let info = <any> document.querySelector(`#mapInfo_${event.target.options.id}`);
 
     if (info) {
-      info.style.left = `${event.layerPoint.x + 70 }px`;
-      info.style.top = `${event.layerPoint.y + 100 }px`;
+      info.style.left = `${event.containerPoint.x + 70 }px`;
+      info.style.top = `${event.containerPoint.y + 100 }px`;
       info.style.display = 'block';
     }
 
   }
 
+  onMarkerLeave = (event) => {
+    let info = <any> document.querySelector(`#mapInfo_${event.target.options.id}`);
+
+    if (info) {
+      info.style.display = 'none';
+    }
+
+  }
 }
