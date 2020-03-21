@@ -60,6 +60,9 @@ MIT
 @angular/fire
 MIT
 
+@angular/forms
+MIT
+
 @angular/material
 MIT
 The MIT License
@@ -134,6 +137,15 @@ Apache-2.0
 
 @firebase/webchannel-wrapper
 Apache-2.0
+
+@ngrx/effects
+MIT
+
+@ngrx/entity
+MIT
+
+@ngrx/store
+MIT
 
 core-js
 MIT
