@@ -2,6 +2,11 @@
   display: inline-block;
   padding-left: 0px;
 
+  &__row {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
   &__title {
     float: left;
     height: 100%;
@@ -10,7 +15,13 @@
     align-items: center;
 
     border-left: 6px solid #d83939;
-    padding-left: 20px;
+  }
+
+  &__location {
+    font-style: italic;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
   }
 
   &__country {
