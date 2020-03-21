@@ -28,6 +28,7 @@ import { RightPanelModule } from './nav/right-panel/right-panel.module';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { MatListModule } from '@angular/material/list';
     RightPanelModule,
     MatMenuModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
