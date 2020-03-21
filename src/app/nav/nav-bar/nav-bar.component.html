@@ -1,14 +1,19 @@
 <mat-toolbar class="toolbar">
   <div class="toolbar__title">
-    <mat-icon class="title__icon">opacity</mat-icon>
+    <mat-icon class="title__icon">favorite</mat-icon>
     <h1>{{ title }}</h1>
   </div>
+
   <div class="toolbar__country">
-    <div class="toolbar__country__flag" #countryFlagDiv></div>
-    <button mat-button [matMenuTriggerFor]="countryListElement">{{countryFlag}} ▼</button>
+    <button mat-button [matMenuTriggerFor]="countryListElement" class="lang-button">
+      <div class="toolbar__country__flag" #countryFlagDiv></div>
+      <span>{{countryFlag}}</span>
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>
     <mat-menu #countryListElement="matMenu">
       <button mat-menu-item *ngFor="let country of countryList" (click)="changeFlag(country)">{{country.code}}</button>
     </mat-menu>
-    <mat-card class="toolbar__country__time">Last Updated at (M/D/YYYY)<br/>{{updatedDate}}</mat-card>
+    <div class="toolbar__country__time">Last update<br/>{{updatedDate}}</div>
+
   </div>
 </mat-toolbar>

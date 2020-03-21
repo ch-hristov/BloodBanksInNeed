@@ -40,12 +40,24 @@
       width: 16px;
       height: 11px;
       background-position: -220px -225px;
+      margin-top: -4px;
+      margin-right: 5px;
     }
 
     &__time {
-      font-size: 16px;
-      line-height: 20px;
+      text-align: right;
+      font-size: 11px;
+      line-height: 13px;
       padding: 8px;
+      letter-spacing: 0.025em;
+      font-weight: 400;
+      border: 1px solid #e6e6e6;
+      margin-left: 12px;
+      border-radius: 5px;
     }
   }
+}
+
+.lang-button {
+  padding-right: 6px;
 }
