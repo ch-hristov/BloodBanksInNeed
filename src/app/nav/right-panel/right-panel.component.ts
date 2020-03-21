@@ -9,6 +9,7 @@ import { BloodBankFacade } from '../../state/blood-bank.facade';
 export class RightPanelComponent implements OnInit {
   bloodBank$ = this.bloodBankFacade.selectedBloodBank$;
   bloodBankLevel = Math.floor(Math.random() * 100) + 1;
+  supplyMode = 'Blood' // 'Supplies in '
 
   constructor(private bloodBankFacade: BloodBankFacade) { }
 

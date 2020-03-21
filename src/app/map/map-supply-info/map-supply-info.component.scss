@@ -1,0 +1,71 @@
+:host {
+    display:none;
+    position: absolute;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.main-category-name {
+    color: black;
+    font-size: 12px;
+}
+
+.all-resources-container {
+    display: flex;
+    margin: 10px 0px;
+}
+
+.main-section-container {
+    border: solid 1px rgb(170, 170, 170);
+    border-radius: 5px;
+    padding: 0px 15px;
+    width: fit-content;
+}
+
+.resource-container {
+    height: 100px;
+    width: 240px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // color: red;
+}
+.status-section {
+    font-size: 14px;
+    padding-left: 10px;
+    padding-top: 16px;
+}
+
+.capacity-sec{
+    border: 2px solid;
+    border-radius: 30px;
+    height: 60px;
+    width: 60px;
+}
+
+.temp app-progress-bar {
+    .progress-bar-content {
+        flex-direction: column;
+    }
+}
+
+
+.capacity-sec-fine {
+    color: #1A73E8;
+}
+
+.capacity-sec-danger {
+    color: #f1c527;
+}
+
+.capacity-sec-overload {
+    color: #f44336;
+}
+
+.capacity-value {
+    margin-top: 20px;
+    margin-left: 13px;
+}
+
+.supply-section {
+    width: 150px
+}

@@ -9,11 +9,10 @@
     </app-panel-header>
   </div>
 
+
   <div class="header-content">
     <div class="station-name">{{ (bloodBank$ | async).name }}</div>
-
-    <app-progress-bar [progressValue]="bloodBankLevel"></app-progress-bar>
-
+    <app-progress-bar [supplyMode]="supplyMode" [progressValue]="bloodBankLevel"></app-progress-bar>
     <app-action-panel [bloodBank]="(bloodBank$ | async)"></app-action-panel>
   </div>
 </div>
