@@ -34,4 +34,8 @@ export class BloodBankService {
   getById(id: string): Observable<BloodBank> {
     return this.bloodBanksCol.doc<BloodBank>(id).valueChanges();
   }
+
+  addDescription(id: string, description: string) {
+    return this.bloodBanksCol.doc(id).set({description}, { merge: true });
+  }
 }
