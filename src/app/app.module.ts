@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,9 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './nav/nav-bar/nav-bar.component';
 import { MaterialModule } from './material/material.module';
 import { LeftPanelComponent } from './nav/left-panel/left-panel.component';
-import { MainViewComponent } from './map/main-view/main-view.component';
 import { MatBadgeModule } from '@angular/material/badge';
-import { OnMapInfoModule } from './map/on-map-info/on-map-info.module';
+import { MapModule } from './map/map.module';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -34,19 +33,18 @@ import { EditBoxComponent } from './edit-box/edit-box.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     LeftPanelComponent,
-    MainViewComponent,
     MainContainerComponent,
     EditBoxComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LeafletModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     BrowserAnimationsModule,
@@ -54,7 +52,7 @@ import { MatInputModule } from '@angular/material/input';
     MatBadgeModule,
     StoreModule.forRoot({bloodBanks: bloodBankReducer}),
     EffectsModule.forRoot([BloodBankEffects]),
-    OnMapInfoModule,
+    MapModule,
     SharedModule,
     RightPanelModule,
     MatMenuModule,

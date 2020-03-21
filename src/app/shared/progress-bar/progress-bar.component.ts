@@ -7,6 +7,8 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 })
 export class ProgressBarComponent implements OnInit, OnChanges {
   @Input() progressValue: number;
+  @Input() supplyMode: string;
+
   progress = {
     color: "primary",
     mode: 'determinate',
@@ -30,8 +32,9 @@ export class ProgressBarComponent implements OnInit, OnChanges {
       color: this.progressBarModes[mode],
       mode: 'determinate',
       value: this.progressValue,
-      tooltip: 'Blood need: ' + mode
+      tooltip: this.supplyMode + ' need: ' + mode
     };
+    // console.log("progress ", this.progress)
 
   }
 

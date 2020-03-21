@@ -1,0 +1,21 @@
+<!-- <p>map-supply-info works!</p> -->
+<div class="main-section-container">
+    <!-- <span class="main-category-name">mamamma</span> -->
+    <div class="all-resources-container">
+        <div class="resource-container">
+            <div class="capacity-sec " [ngClass]="capacityColorClass">
+                <div class="capacity-value " >
+                    {{capacity}} / 10
+                </div>
+            </div>
+            <div>
+                <div class="status-section">
+                    Status: {{status}}
+                </div>
+                <div class="supply-section temp">
+                    <app-progress-bar class="temp" [supplyMode]="supplyMode" [progressValue]="supplyLevel"></app-progress-bar>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

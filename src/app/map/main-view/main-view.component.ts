@@ -68,7 +68,8 @@ export class MainViewComponent implements OnInit {
 
   onMarkerDisplay = (event) => {
     let info = <any> document.querySelector(`#mapInfo_${event.target.options.id}`);
-    
+    console.log("selector ", event.target.options.id )
+    console.log("selector ", info )
     if (info) {
 
       const pixelPoint = event.target._map.project(event.target._latlng, event.target._map.getZoom());
@@ -83,7 +84,7 @@ export class MainViewComponent implements OnInit {
   }
 
 
-  onMarkerActive = (event) => {    
+  onMarkerActive = (event) => {
     let info = <any> document.querySelector(`#mapInfo_${event.target.options.id}`);
 
     if (info) {

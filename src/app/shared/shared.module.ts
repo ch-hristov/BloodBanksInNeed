@@ -10,6 +10,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   imports: [
@@ -23,16 +25,19 @@ import {MatInputModule} from '@angular/material/input';
     MatTableModule,
     MatFormFieldModule,
     MatInputModule,
+    MatProgressBarModule,
   ],
   declarations: [
     // declare component here
     ListComponent,
-    PanelHeaderComponent
+    PanelHeaderComponent,
+    ProgressBarComponent
   ],
   exports: [
     // export component here
     ListComponent,
-    PanelHeaderComponent
+    PanelHeaderComponent,
+    ProgressBarComponent
   ]
 })
 export class SharedModule { }

@@ -30,3 +30,14 @@
 ::ng-deep .mat-progress-bar.mat-primary .mat-progress-bar-buffer {
     background-color: #a6c4ec;
 }
+
+:host {
+  &.temp {
+      .progress-bar-content {
+          flex-direction: column;
+      }
+      .progress-bar-label {
+        padding-bottom: 3px;
+      }
+  }
+}
