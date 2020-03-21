@@ -46,4 +46,7 @@ export class RightPanelComponent implements OnInit {
      }
   }
 
+  onIconClicked() {
+    this.bloodBankFacade.closeRightPanel();
+  }
 }

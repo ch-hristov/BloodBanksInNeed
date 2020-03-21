@@ -5,6 +5,8 @@ import { ListComponent } from './list/list.component';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { PanelHeaderComponent } from './panel-header/panel-header.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
@@ -14,14 +16,17 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatListModule,
     MatIconModule,
     MatTooltipModule,
+    MatButtonModule,
   ],
   declarations: [
     // declare component here
-    ListComponent
+    ListComponent,
+    PanelHeaderComponent
   ],
   exports: [
     // export component here
-    ListComponent
+    ListComponent,
+    PanelHeaderComponent
   ]
 })
 export class SharedModule { }

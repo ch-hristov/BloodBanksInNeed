@@ -1,0 +1,25 @@
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1A73E8;
+  color: #FAFAFA;
+}
+
+.header__title {
+  margin: 0;
+  letter-spacing: 0.025em;
+  font-size: 13px;
+  font-weight: 500;
+  padding-right: 16px;
+}
+
+.station-name {
+  letter-spacing: 0.025em;
+  font-size: 15px;
+  font-weight: 500;
+  color: #9B9B9B;
+  text-align: center;
+  margin: auto 0;
+  padding: 16px 16px 16px 4px;
+}
