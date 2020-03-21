@@ -4,4 +4,24 @@
   width: 400px;
   text-align: center;
   border-left: 1px solid #e6e6e6;
+  position: relative;
+}
+
+.header-container {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  z-index: 11;
+}
+
+.station-name {
+  letter-spacing: 0.025em;
+  font-size: 15px;
+  font-weight: 500;
+  color: #9B9B9B;
+  text-align: center;
+  margin: auto 0;
+  padding: 32px 16px 16px 16px;
 }
