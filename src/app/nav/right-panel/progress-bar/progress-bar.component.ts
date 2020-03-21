@@ -25,13 +25,13 @@ export class ProgressBarComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-    let mode = this.progressValue < 30 ? 'high' : (this.progressValue < 60 ? 'medium' : 'enough')
+    const mode = this.progressValue < 30 ? 'high' : (this.progressValue < 60 ? 'medium' : 'enough')
     this.progress = {
       color: this.progressBarModes[mode],
       mode: 'determinate',
       value: this.progressValue,
-      tooltip: 'Blood need: ' + mode + ' level'
-    }
+      tooltip: 'Blood need: ' + mode
+    };
 
   }
 

@@ -1,16 +1,25 @@
 .progress-bar-content {
-    margin:20px
-  }
+  margin: 20px 20px 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.progress-bar-label {
+  font-size: 12px;
+  margin-right: 4px;
+  line-height: 13px;
+  color: #9B9B9B;
+}
 
 .mat-progress-bar {
-    height: 10px;
-    border-radius: 5px;
+  height: 7px;
+  border-radius: 5px;
 }
 
 ::ng-deep .mat-progress-bar.mat-medium .mat-progress-bar-fill::after {
-    background-color: #f1c527 !important;
+  background-color: #f1c527 !important;
 }
 
 ::ng-deep .mat-progress-bar.mat-medium .mat-progress-bar-buffer {
-    background-color: #fadb9c !important;
+  background-color: #fadb9c !important;
 }
