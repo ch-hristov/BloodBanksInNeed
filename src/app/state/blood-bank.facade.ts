@@ -12,6 +12,7 @@ export class BloodBankFacade {
   allBloodBanks$ = this.store.pipe(select(BloodBanksSelectors.getAllBloodBanks));
   selectedBloodBank$ = this.store.pipe(select(BloodBanksSelectors.getSelected));
   isRightPanelOpened$  = this.store.pipe(select(BloodBanksSelectors.getRightPanelOpened));
+  isModalDialogOpened$ = this.store.pipe(select(BloodBanksSelectors.getModalDialogOpened));
 
   constructor(private store: Store<fromBloodBanks.BloodBankState>) {}
 
@@ -25,5 +26,13 @@ export class BloodBankFacade {
 
   closeRightPanel() {
     this.store.dispatch(BloodBanksActions.closeRightPanel());
+  }
+
+  openModalDialog() {
+    this.store.dispatch(BloodBanksActions.openModalDialog());
+  }
+
+  closeModalDialog() {
+    this.store.dispatch(BloodBanksActions.closeModalDialog());
   }
 }

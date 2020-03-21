@@ -10,6 +10,7 @@ export interface BloodBankState extends EntityState<BloodBank> {
   loaded: boolean;
   error?: string | null;
   rightPanelOpened: boolean;
+  modalDialogOpened: boolean;
 }
 
 export const bloodBankAdapter: EntityAdapter<BloodBank> = createEntityAdapter<BloodBank>();
@@ -18,6 +19,7 @@ export const initialState: BloodBankState = bloodBankAdapter.getInitialState({
   selectedId: null,
   loaded: false,
   rightPanelOpened: false,
+  modalDialogOpened: false,
 });
 
 
@@ -44,5 +46,13 @@ export const bloodBankReducer = createReducer(
   on(BloodBankActions.closeRightPanel, (state) => ({
     ...state,
     rightPanelOpened: false
+  })),
+  on(BloodBankActions.openModalDialog, (state) => ({
+    ...state,
+    modalDialogOpened: true
+  })),
+  on(BloodBankActions.closeModalDialog, (state) => ({
+    ...state,
+    modalDialogOpened: false
   })),
 );
