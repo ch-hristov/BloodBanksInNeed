@@ -13,12 +13,11 @@ export class NavBarComponent implements OnInit {
   @ViewChild('countryFlagDiv') countryFlagDiv: ElementRef;
 
   title: string;
-  bloodBank$ = this.bloodBankFacade.selectedBloodBank$;
   countryFlag = 'PL';
   countryList = [{code: 'PL', flagPosition: '-220px -225px'}, {code: 'EN', flagPosition: '-360px -300px'}];
   updatedDate: string;
 
-  constructor(private bloodBankFacade: BloodBankFacade) {
+  constructor() {
     this.title = environment.appName;
     const date = new Date();
     this.updatedDate = date.toLocaleString('en-US', { hour12: true });
