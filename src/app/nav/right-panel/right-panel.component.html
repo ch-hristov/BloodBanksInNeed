@@ -1,4 +1,6 @@
-<div class="sidenav">
+<div class="sidenav" *ngIf="(bloodBank$ | async)">
+  <div>TMP</div>
+  <span>{{ (bloodBank$ | async).name }}</span>
   <div>TODO header</div>
   <div class="progress-bar-content">
     <mat-progress-bar
@@ -8,11 +10,9 @@
       value={{progress.value}}
       bufferValue="75"
       matTooltip={{progress.tooltip}}
-      >
+    >
     </mat-progress-bar>
   </div>
 
-  <div *ngIf="(bloodBank$ | async)">
-    <app-action-panel [bloodBank]="(bloodBank$ | async)"></app-action-panel>
-  </div>
+  <app-action-panel [bloodBank]="(bloodBank$ | async)"></app-action-panel>
 </div>
