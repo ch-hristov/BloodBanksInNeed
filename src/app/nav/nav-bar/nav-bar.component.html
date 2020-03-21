@@ -6,9 +6,10 @@
   </div>
   <div class="toolbar__country">
     <div class="toolbar__country__flag" #countryFlagDiv></div>
-    <button mat-button [matMenuTriggerFor]="countryListElement">{{countryFlag}}</button>
+    <button mat-button [matMenuTriggerFor]="countryListElement">{{countryFlag}} ▼</button>
     <mat-menu #countryListElement="matMenu">
       <button mat-menu-item *ngFor="let country of countryList" (click)="changeFlag(country)">{{country.code}}</button>
     </mat-menu>
+    <mat-card class="toolbar__country__time">Last Updated at (M/D/YYYY)<br/>{{updatedDate}}</mat-card>
   </div>
 </mat-toolbar>
