@@ -131,6 +131,8 @@ export class LeftPanelComponent implements OnInit {
 
   sortAlphabetically(array) {
     array.sort((a: any, b: any) => {
+      a = this.replaceDiacritics(a)
+      b = this.replaceDiacritics(b)      
       if (a < b) {
         return -1;
       } else if (a > b) {
@@ -155,6 +157,25 @@ export class LeftPanelComponent implements OnInit {
       }
     }
     return bloodSupplyArray
+  }
+
+  replaceDiacritics(value) {
+    var r: string = value.toLowerCase()
+      r = r.replace(new RegExp("\\s", "g"), "")
+      r = r.replace(new RegExp("[àáâãäåą]", "g"), "a")
+      r = r.replace(new RegExp("æ", "g"), "ae")
+      r = r.replace(new RegExp("[çć]", "g"), "c")
+      r = r.replace(new RegExp("[èéêëę]", "g"), "e")
+      r = r.replace(new RegExp("[ìíîï]", "g"), "i")
+      r = r.replace(new RegExp("[ñń]", "g"), "n")
+      r = r.replace(new RegExp("[òóôõö]", "g"), "o")
+      r = r.replace(new RegExp("œ", "g"), "oe")
+      r = r.replace(new RegExp("[ùúûü]", "g"), "u")
+      r = r.replace(new RegExp("[ýÿ]", "g"), "y")
+      r = r.replace(new RegExp("ł", "g"), "l")
+      r = r.replace(new RegExp("ś", "g"), "s")
+      r = r.replace(new RegExp("[źż]", "g"), "z")
+    return r
   }
 
   handleBloodBankClick(bloodBank) {

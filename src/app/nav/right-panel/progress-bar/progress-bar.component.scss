@@ -17,9 +17,16 @@
 }
 
 ::ng-deep .mat-progress-bar.mat-medium .mat-progress-bar-fill::after {
-  background-color: #f1c527 !important;
+    background-color: #f1c527;
 }
 
 ::ng-deep .mat-progress-bar.mat-medium .mat-progress-bar-buffer {
-  background-color: #fadb9c !important;
+    background-color: #fadb9c;
+}
+
+::ng-deep .mat-progress-bar.mat-primary .mat-progress-bar-fill::after {
+    background-color: #1A73E8;
+}
+::ng-deep .mat-progress-bar.mat-primary .mat-progress-bar-buffer {
+    background-color: #a6c4ec;
 }
