@@ -1,34 +1,20 @@
-.list-container {
-  display: flex;
-  font-family: Roboto, Arial, sans-serif;
+.filter-field {
+  width: calc(100% - 12px);
+  padding: 16px 6px 0;
+}
+
+.list-table {
   width: 100%;
 }
 
-.list {
-  width: 100%;
+.col-name {
+  text-align: left;
 }
 
-.item {
-  display: flex;
-  justify-content: space-between;
-  transition: background-color ease-in-out .2s;
-
-  &:hover {
-    background-color: #F1F3F4;
-  }
+.col-quantity {
+  text-align: right;
 }
 
-.item-name {
-  font-size: 13px !important;
-  padding: 7px 0 !important;
-}
-
-.item-quantity {
-  font-size: 12px;
-  cursor: default;
-}
-
-// material classes
-.mat-list-item {
-  height: auto !important;
+::ng-deep .mat-form-field-wrapper {
+  padding: 0;
 }

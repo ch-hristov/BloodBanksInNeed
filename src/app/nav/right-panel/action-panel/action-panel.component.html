@@ -29,9 +29,10 @@
     <app-contact [address]="bloodBank.address" [city]="bloodBank.city"></app-contact>
   </div>
   <div *ngSwitchCase="'Needs'" [@enterTrigger]="'fadeIn'">
-    <app-list [items]="bloodBank.needs"></app-list>
+    <app-list [items]="getNeeds()"></app-list>
   </div>
   <div *ngSwitchCase="'Offers'" [@enterTrigger]="'fadeIn'">
-    <app-list [items]="bloodBank.offers"></app-list>
+    <app-list [items]="getOffers()"></app-list>
   </div>
 </div>
+

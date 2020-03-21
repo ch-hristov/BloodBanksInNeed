@@ -1,13 +1,19 @@
 <div class="sidenav" *ngIf="(bloodBank$ | async)">
 
-  <app-panel-header [title]="(bloodBank$ | async).name"
-                    [icon]="'close'"
-                    (iconClicked)="onIconClicked()"
-  >
+  <div class="header-container">
+    <app-panel-header [title]="'Station information'"
+                      [icon]="'close'"
+                      (iconClicked)="onIconClicked()"
+    >
 
-  </app-panel-header>
+    </app-panel-header>
+  </div>
 
-  <app-progress-bar [progressValue]="bloodBankLevel"></app-progress-bar>
+  <div class="header-content">
+    <div class="station-name">{{ (bloodBank$ | async).name }}</div>
 
-  <app-action-panel [bloodBank]="(bloodBank$ | async)"></app-action-panel>
+    <app-progress-bar [progressValue]="bloodBankLevel"></app-progress-bar>
+
+    <app-action-panel [bloodBank]="(bloodBank$ | async)"></app-action-panel>
+  </div>
 </div>
