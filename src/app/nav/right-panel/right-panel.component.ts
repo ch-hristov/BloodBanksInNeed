@@ -13,9 +13,11 @@ export class RightPanelComponent implements OnInit {
   constructor(private bloodBankFacade: BloodBankFacade) { }
 
   ngOnInit(): void {
-    this.bloodBank$.subscribe(() => {
-      this.bloodBankLevel = Math.floor(Math.random() * 100) + 1;
-    })
+    // tmp - delete when the value will be added to Blood Bank structure
+    this.bloodBank$.subscribe(() => this.bloodBankLevel = Math.floor(Math.random() * 100) + 1);
   }
 
+  onIconClicked() {
+    this.bloodBankFacade.closeRightPanel();
+  }
 }

@@ -3,9 +3,9 @@
     <ng-content select="app-left-panel"></ng-content>
   </mat-drawer>
 
-  <div class="sidenav-content">
+  <mat-drawer-content class="sidenav-content">
     <ng-content select="app-main-view"></ng-content>
-  </div>
+  </mat-drawer-content>
 
   <mat-drawer #rightPanel mode="side" position="end" [opened]="(isRightNavOpened$ | async)">
     <ng-content select="app-right-panel"></ng-content>

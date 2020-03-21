@@ -1,8 +1,13 @@
 <div class="sidenav" *ngIf="(bloodBank$ | async)">
-  <div>TMP</div>
-  <span>{{ (bloodBank$ | async).name }}</span>
-  <div>TODO header</div>
+
+  <app-panel-header [title]="(bloodBank$ | async).name"
+                    [icon]="'close'"
+                    (iconClicked)="onIconClicked()"
+  >
+
+  </app-panel-header>
 
   <app-progress-bar [progressValue]="bloodBankLevel"></app-progress-bar>
+
   <app-action-panel [bloodBank]="(bloodBank$ | async)"></app-action-panel>
 </div>

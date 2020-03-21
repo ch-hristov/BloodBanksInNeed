@@ -25,6 +25,6 @@ export const selectBloodBank = createAction(
 );
 
 /**
- *  RUGHT PANEL
+ *  RIGHT PANEL
  */
 export const closeRightPanel = createAction('[BloodBank] Close right panel');
