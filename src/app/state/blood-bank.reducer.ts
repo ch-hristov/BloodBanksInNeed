@@ -9,6 +9,7 @@ export interface BloodBankState extends EntityState<BloodBank> {
   selectedId?: string | number;
   loaded: boolean;
   error?: string | null;
+  rightPanelOpened: boolean;
 }
 
 export const bloodBankAdapter: EntityAdapter<BloodBank> = createEntityAdapter<BloodBank>();
@@ -16,6 +17,7 @@ export const bloodBankAdapter: EntityAdapter<BloodBank> = createEntityAdapter<Bl
 export const initialState: BloodBankState = bloodBankAdapter.getInitialState({
   selectedId: null,
   loaded: false,
+  rightPanelOpened: false,
 });
 
 
@@ -36,6 +38,11 @@ export const bloodBankReducer = createReducer(
   })),
   on(BloodBankActions.selectBloodBank, (state, { id }) => ({
     ...state,
-    selectedId: id
-  }))
+    selectedId: id,
+    rightPanelOpened: true
+  })),
+  on(BloodBankActions.selectBloodBank, (state) => ({
+    ...state,
+    rightPanelOpened: false
+  })),
 );

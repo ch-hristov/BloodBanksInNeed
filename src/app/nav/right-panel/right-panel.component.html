@@ -1,6 +1,4 @@
-<mat-sidenav class="sidenav" #sidenav mode="side" [(opened)]="isRightNavOpened">
-
-
+<div class="sidenav">
   <div>TODO header</div>
   <div class="progress-bar-content">
     <mat-progress-bar
@@ -17,7 +15,4 @@
   <div *ngIf="(bloodBank$ | async)">
     <app-action-panel [bloodBank]="(bloodBank$ | async)"></app-action-panel>
   </div>
-
-</mat-sidenav>
-
-
+</div>

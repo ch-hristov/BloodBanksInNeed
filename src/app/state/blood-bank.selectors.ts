@@ -50,3 +50,11 @@ export const getSelected = createSelector(
   getSelectedId,
   (entities, selectedId) => selectedId && entities[selectedId]
 );
+
+/**
+ * RIGHT PANEL
+ */
+export const getRightPanelOpened = createSelector(
+  getBloodBanksState,
+  (state: BloodBankState) => state.rightPanelOpened
+);

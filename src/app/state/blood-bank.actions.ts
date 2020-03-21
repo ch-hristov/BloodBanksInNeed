@@ -23,3 +23,8 @@ export const selectBloodBank = createAction(
   '[BloodBank] Select Blood Bank',
   props<{ id: string }>()
 );
+
+/**
+ *  RUGHT PANEL
+ */
+export const closeRightPanel = createAction('[BloodBank] Close right panel');

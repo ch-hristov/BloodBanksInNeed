@@ -87,8 +87,8 @@ export class MainViewComponent implements OnInit {
     let info = <any> document.querySelector(`#mapInfo_${event.target.options.id}`);
 
     if (info) {
-      info.style.left = `${event.containerPoint.x + 70 }px`;
-      info.style.top = `${event.containerPoint.y + 100 }px`;
+      info.style.left = `${event.containerPoint.x + 20 }px`;
+      info.style.top = `${event.containerPoint.y + 20 }px`;
       info.style.display = 'block';
     }
 

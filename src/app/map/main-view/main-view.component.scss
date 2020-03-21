@@ -1,5 +1,5 @@
-:host {
-  width: 100vw;
+.map {
+  height: calc(100vh - 64px); // because of header
 }
 
 .hidden {

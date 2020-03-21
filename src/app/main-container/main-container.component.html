@@ -1,3 +1,16 @@
-<ng-content select="app-left-panel"></ng-content>
-<ng-content select="app-main-view"></ng-content>
-<ng-content select="app-right-panel"></ng-content>
+<mat-drawer-container class="sidenav-container" autosize>
+  <mat-drawer #leftPanel mode="side" opened="true">
+    <ng-content select="app-left-panel"></ng-content>
+  </mat-drawer>
+
+  <div class="sidenav-content">
+    <ng-content select="app-main-view"></ng-content>
+  </div>
+
+  <mat-drawer #rightPanel mode="side" position="end" [opened]="(isRightNavOpened$ | async)">
+    <ng-content select="app-right-panel"></ng-content>
+  </mat-drawer>
+
+</mat-drawer-container>
+
+

@@ -1,20 +1,7 @@
-.sidenav {
-  position: sticky;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.max-height-100 {
-  max-height: 100vh;
-  overflow: auto;
-  display: block;
-}
-
 .nav-left__sidenav {
   background-color: whitesmoke;
   min-width: 200px;
-  height: 100vh;
+  height: 100%;
 }
 
 .flex {
@@ -85,8 +72,8 @@
   display: flex;
   align-items: center;
   margin-left: 10px;
-  margin-top: 10px;
-  margin-bottom: 0px;
+  padding-top: 10px;
+  margin-bottom: 0;
 }
 
 .list__alerts-alert {
