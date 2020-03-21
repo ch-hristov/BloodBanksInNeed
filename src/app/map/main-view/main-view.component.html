@@ -1,8 +1,20 @@
-<on-map-info></on-map-info>
+<!-- smart markers -->
+<div>
+  <div *ngFor="let marker of layers">
+<!--    {{ marker.options | json }}-->
+    <on-map-info id="mapInfo_{{  marker.options.id  }}">
+      {{  marker.options.name  }}
+    </on-map-info>
+  </div>
+</div>
 
+<!-- map -->
 <div style="height: 100vh"
      leaflet
      [leafletOptions]="options"
      [leafletLayers]="layers"
       >
 </div>
+
+
+

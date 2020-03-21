@@ -1,6 +1,7 @@
 :host {
     height: calc(100vh - 64px);
     display: flex;
+    margin-top: -5px;
     flex-direction: row;
     flex-wrap: nowrap;
 }
