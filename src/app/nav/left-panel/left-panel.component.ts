@@ -20,98 +20,99 @@ export class LeftPanelComponent implements OnInit {
   }
 
   prepareBloodBanksInNeedList(bloodBanks) {
-    // bloodBanks = [
-    //   {
-    //     name: 'jeden Bank krwi kurde długi bardzo długi',
-    //     city: "Lublin",
-    //     blood_supply: {
-    //       rhPlus: {
-    //         A: 100,
-    //         B: 80,
-    //         AB: 10,
-    //         0: 0
-    //       },
-    //       rhMinus: {
-    //         A: 80,
-    //         B: 30,
-    //         AB: 20,
-    //         0: 15
-    //       }
-    //     }
-    //   },
-    //   {
-    //     name: 'drugi bank',
-    //     city: "Wrocław",
-    //     blood_supply: {
-    //       rhPlus: {
-    //         A: 100,
-    //         B: 80,
-    //         AB: 10,
-    //         0: 0
-    //       },
-    //       rhMinus: {
-    //         A: 80,
-    //         B: 30,
-    //         AB: 20,
-    //         0: 15
-    //       }
-    //     }
-    //   },
-    //   {
-    //     name: 'trzeci bank',
-    //     city: "Wrocław",
-    //     blood_supply: {
-    //       rhPlus: {
-    //         A: 100,
-    //         B: 80,
-    //         AB: 10,
-    //         0: 0
-    //       },
-    //       rhMinus: {
-    //         A: 80,
-    //         B: 30,
-    //         AB: 20,
-    //         0: 15
-    //       }
-    //     }
-    //   },
-    //   {
-    //     name: 'czwarty bank',
-    //     city: "Grudziądz",
-    //     blood_supply: {
-    //       rhPlus: {
-    //         A: 100,
-    //         B: 80,
-    //         AB: 10,
-    //         0: 0
-    //       },
-    //       rhMinus: {
-    //         A: 80,
-    //         B: 30,
-    //         AB: 20,
-    //         0: 15
-    //       }
-    //     }
-    //   },
-    //   {
-    //     name: 'piąty bank',
-    //     city: "Wrocław",
-    //     blood_supply: {
-    //       rhPlus: {
-    //         A: 100,
-    //         B: 80,
-    //         AB: 10,
-    //         0: 0
-    //       },
-    //       rhMinus: {
-    //         A: 80,
-    //         B: 30,
-    //         AB: 20,
-    //         0: 15
-    //       }
-    //     }
-    //   }
-    // ]
+    bloodBanks = [
+      {
+        name: 'jeden Bank krwi kurde długi bardzo długi',
+        city: "Lublin",
+        blood_supply: {
+          rhPlus: {
+            A: 100,
+            B: 80,
+            AB: 10,
+            0: 0
+          },
+          rhMinus: {
+            A: 80,
+            B: 30,
+            AB: 20,
+            0: 15
+          }
+        }
+      },
+      {
+        name: 'drugi bank',
+        city: "Wrocław",
+        blood_supply: {
+          rhPlus: {
+            A: 100,
+            B: 80,
+            AB: 10,
+            0: 0
+          },
+          rhMinus: {
+            A: 80,
+            B: 30,
+            AB: 20,
+            0: 15
+          }
+        }
+      },
+      {
+        name: 'trzeci bank',
+        city: "Wrocław",
+        blood_supply: {
+          rhPlus: {
+            A: 100,
+            B: 80,
+            AB: 10,
+            0: 0
+          },
+          rhMinus: {
+            A: 80,
+            B: 30,
+            AB: 20,
+            0: 15
+          }
+        }
+      },
+      {
+        name: 'czwarty bank',
+        city: "Grudziądz",
+        blood_supply: {
+          rhPlus: {
+            A: 100,
+            B: 80,
+            AB: 10,
+            0: 0
+          },
+          rhMinus: {
+            A: 80,
+            B: 30,
+            AB: 20,
+            0: 15
+          }
+        }
+      },
+      {
+        name: 'piąty bank',
+        city: "Wrocław",
+        blood_supply: {
+          rhPlus: {
+            A: 100,
+            B: 80,
+            AB: 10,
+            0: 0
+          },
+          rhMinus: {
+            A: 80,
+            B: 30,
+            AB: 20,
+            0: 15
+          }
+        }
+      }
+    ]
+
     this.bloodBanksInNeed = {}
     for (let bloodBank of bloodBanks) {
       let bloodBankBloodSupplyArray = this.prepareBloodSupplyArray(bloodBank)

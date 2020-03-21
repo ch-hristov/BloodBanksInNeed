@@ -1,11 +1,16 @@
 .toolbar {
   display: inline-block;
+  padding-left: 0px;
+
   &__title {
     float: left;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    border-left: 6px solid #d83939;
+    padding-left: 20px;
   }
 
   &__country {

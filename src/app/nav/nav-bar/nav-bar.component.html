@@ -1,6 +1,7 @@
 <mat-toolbar class="toolbar">
   <div class="toolbar__title">
-    <span>{{ title }}: </span>
+    <span>{{ title }}</span>
+
     <span>{{ (bloodBank$ | async)?.name }}</span>
   </div>
   <div class="toolbar__country">
