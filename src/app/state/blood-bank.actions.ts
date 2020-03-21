@@ -28,3 +28,10 @@ export const selectBloodBank = createAction(
  *  RIGHT PANEL
  */
 export const closeRightPanel = createAction('[BloodBank] Close right panel');
+
+/**
+ *  MODAL DIALOG
+ */
+export const openModalDialog = createAction('[EditBox] Open edit box');
+
+export const closeModalDialog = createAction('[EditBox] Close edit box');

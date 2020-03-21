@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { BloodBankService } from '../services/blood-bank.service';
+import { BloodBankFacade } from '../state/blood-bank.facade';
 
 @Component({
   selector: 'app-edit-box',
@@ -10,9 +11,13 @@ export class EditBoxComponent {
 
   @Input() id: string;
 
-  constructor(private service: BloodBankService) { }
+  constructor(private service: BloodBankService, private bloodBankFacade: BloodBankFacade) { }
 
   onSave(description: string) {
     this.service.addDescription(this.id, description);
+  }
+
+  onModalDialogClose() {
+    this.bloodBankFacade.closeModalDialog();
   }
 }

@@ -32,7 +32,9 @@
     <app-list [items]="getNeeds()"></app-list>
   </div>
   <div *ngSwitchCase="'Offers'" [@enterTrigger]="'fadeIn'">
+    <div class="add-offer" (click)="onOpenModalDialog()">
+      <mat-icon class="circle-icon" (click)="onOpenModalDialog()">add</mat-icon>
+    </div>
     <app-list [items]="getOffers()"></app-list>
   </div>
 </div>
-

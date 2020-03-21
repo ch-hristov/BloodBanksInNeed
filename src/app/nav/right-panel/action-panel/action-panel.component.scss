@@ -4,3 +4,25 @@
   justify-content: space-between;
   border-top: 1px solid #e6e6e6;
 }
+
+.add-offer {
+  position: fixed;
+  bottom: 20px;
+  right: 41px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #1A73E8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background: #1a60c0;
+  }
+}
+
+.circle-icon {
+  color: white;
+}

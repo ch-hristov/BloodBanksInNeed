@@ -58,3 +58,11 @@ export const getRightPanelOpened = createSelector(
   getBloodBanksState,
   (state: BloodBankState) => state.rightPanelOpened
 );
+
+/**
+ *  MODAL DIALOG
+ */
+export const getModalDialogOpened = createSelector(
+  getBloodBanksState,
+  (state: BloodBankState) => state.modalDialogOpened
+);

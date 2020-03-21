@@ -2,8 +2,9 @@ import {Component, Input, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {BloodBank} from '../../../models/blood-bank';
 import {ListItem} from '../../../models/list-item';
+import {BloodBankFacade} from "../../../state/blood-bank.facade";
 
-type panelType = 'Contact' | 'Needs' | 'Offers';  // TODO this should be in feature store
+type panelType = 'Contact' | 'Needs' | 'Offers' | 'AddOffer';  // TODO this should be in feature store
 
 const getRandom = () => Math.round(Math.random() * 100);
 const TMP_SUPPLIES: ListItem[] = [
@@ -51,7 +52,7 @@ export class ActionPanelComponent implements OnInit {
   @Input() bloodBank: BloodBank;
   selectedPanel: panelType = 'Contact'; // TODO this should be in feature store
 
-  constructor() {
+  constructor(private bloodBankFacade: BloodBankFacade) {
   }
 
   ngOnInit(): void {
@@ -65,6 +66,10 @@ export class ActionPanelComponent implements OnInit {
   getOffers() {
     // normally will be return this.bloodBank.needs
     return TMP_SUPPLIES.sort(() => Math.random() - 0.5);
+  }
+
+  onOpenModalDialog() {
+    this.bloodBankFacade.openModalDialog();
   }
 
 }

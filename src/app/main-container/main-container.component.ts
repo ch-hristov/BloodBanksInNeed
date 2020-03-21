@@ -8,10 +8,12 @@ import { BloodBankFacade } from '../state/blood-bank.facade';
 })
 export class MainContainerComponent implements OnInit {
   isRightNavOpened$ = this.bloodBankFacade.isRightPanelOpened$;
+  isModalDialogOpened$ = this.bloodBankFacade.isModalDialogOpened$;
 
   constructor(private bloodBankFacade: BloodBankFacade) { }
 
   ngOnInit(): void {
+    console.log(this.isRightNavOpened$);
   }
 
 }
