@@ -11,6 +11,7 @@ export class BloodBankFacade {
   loaded$ = this.store.pipe(select(BloodBanksSelectors.getBloodBanksLoaded));
   allBloodBanks$ = this.store.pipe(select(BloodBanksSelectors.getAllBloodBanks));
   selectedBloodBank$ = this.store.pipe(select(BloodBanksSelectors.getSelected));
+  isRightPanelOpened$  = this.store.pipe(select(BloodBanksSelectors.getRightPanelOpened));
 
   constructor(private store: Store<fromBloodBanks.BloodBankState>) {}
 
@@ -20,5 +21,9 @@ export class BloodBankFacade {
 
   selectBloodBank(id: string) {
     this.store.dispatch(BloodBanksActions.selectBloodBank({ id }));
+  }
+
+  closeRightPanel() {
+    this.store.dispatch(BloodBanksActions.closeRightPanel());
   }
 }

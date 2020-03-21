@@ -7,7 +7,6 @@ import { BloodBankFacade } from '../../state/blood-bank.facade';
   styleUrls: ['./right-panel.component.scss']
 })
 export class RightPanelComponent implements OnInit {
-  isRightNavOpened = true;
   bloodBank$ = this.bloodBankFacade.selectedBloodBank$;
 
   progress = {
