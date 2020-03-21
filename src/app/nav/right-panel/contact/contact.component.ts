@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BloodBank } from '../../../models/blood-bank';
 
 @Component({
   selector: 'app-contact',
@@ -6,8 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  @Input() address: string;
-  @Input() city: string;
+  @Input() bloodBank: BloodBank;
 
   constructor() { }
 
