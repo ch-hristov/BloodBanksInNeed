@@ -7,17 +7,7 @@
 
   </app-panel-header>
 
-<!--  <div class="progress-bar-content">-->
-<!--    <mat-progress-bar-->
-<!--      class="progress-bar"-->
-<!--      color={{progress.color}}-->
-<!--      mode={{progress.mode}}-->
-<!--      value={{progress.value}}-->
-<!--      bufferValue="75"-->
-<!--      matTooltip={{progress.tooltip}}-->
-<!--    >-->
-<!--    </mat-progress-bar>-->
-<!--  </div>-->
+  <app-progress-bar [progressValue]="bloodBankLevel"></app-progress-bar>
 
   <app-action-panel [bloodBank]="(bloodBank$ | async)"></app-action-panel>
 </div>
