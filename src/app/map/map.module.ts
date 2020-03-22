@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatBadgeModule } from '@angular/material/badge';
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 import { OnMapInfoComponent } from './on-map-blood-info/on-map-info.component';
@@ -18,6 +19,8 @@ import { MainViewComponent } from './main-view/main-view.component';
   imports: [
     CommonModule,
     MatBadgeModule,
+    MatButtonModule,
+    MatIconModule,
     SharedModule,
     LeafletModule.forRoot(),
   ],

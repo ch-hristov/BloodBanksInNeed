@@ -8,31 +8,12 @@ type panelType = 'Contact' | 'Needs' | 'Offers' | 'AddOffer';  // TODO this shou
 
 const getRandom = () => Math.round(Math.random() * 100);
 const TMP_SUPPLIES: ListItem[] = [
-  {name: 'Gloves', quantity: getRandom()},
-  {name: 'Masks', quantity: getRandom()},
-  {name: 'Wipes', quantity: getRandom()},
-  {name: 'Disinfectant', quantity: getRandom()},
-  {name: 'Soap pack', quantity: getRandom()},
-  {name: 'Gloves', quantity: getRandom()},
-  {name: 'Masks', quantity: getRandom()},
-  {name: 'Wipes', quantity: getRandom()},
-  {name: 'Disinfectant', quantity: getRandom()},
-  {name: 'Soap pack', quantity: getRandom()},
-  {name: 'Gloves', quantity: getRandom()},
-  {name: 'Masks', quantity: getRandom()},
-  {name: 'Wipes', quantity: getRandom()},
-  {name: 'Disinfectant', quantity: getRandom()},
-  {name: 'Soap pack', quantity: getRandom()},
-  {name: 'Gloves', quantity: getRandom()},
-  {name: 'Masks', quantity: getRandom()},
-  {name: 'Wipes', quantity: getRandom()},
-  {name: 'Disinfectant', quantity: getRandom()},
-  {name: 'Soap pack', quantity: getRandom()},
-  {name: 'Gloves', quantity: getRandom()},
-  {name: 'Masks', quantity: getRandom()},
-  {name: 'Wipes', quantity: getRandom()},
-  {name: 'Disinfectant', quantity: getRandom()},
-  {name: 'Soap pack', quantity: getRandom()},
+  {name: 'Rule #1', quantity: getRandom()},
+  {name: 'Rule #2', quantity: getRandom()},
+  {name: 'Rule #3', quantity: getRandom()},
+  {name: 'Rule #4', quantity: getRandom()},
+  {name: 'Guideline #2', quantity: getRandom()},
+  {name: 'Guideline #2', quantity: getRandom()},
 ];
 
 @Component({

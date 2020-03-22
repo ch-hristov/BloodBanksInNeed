@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  appName: 'Blood Banks in need of help',
+  appName: 'Blood Banks | Overview',
   firebase: {
     // Main version
     apiKey: "AIzaSyD7j9QVRhP6G4-6tf6lg-K4wIUC27r8Lkk",

@@ -2,12 +2,12 @@
 <div>
   <div *ngFor="let marker of layers">
 <!--    {{ marker.options | json }}-->
-    <!-- <on-map-info id="mapInfo_{{  marker.options.id  }}">
+    <on-map-info id="mapInfo_{{  marker.options.id  }}">
       {{  marker.options.name  }}
-    </on-map-info> -->
-    <app-map-supply-info id="mapInfo_{{  marker.options.id  }}">
-      {{  marker.options.name  }}
-    </app-map-supply-info>
+    </on-map-info>
+<!--    <app-map-supply-info id="mapInfo_{{  marker.options.id  }}">-->
+<!--      {{  marker.options.name  }}-->
+<!--    </app-map-supply-info>-->
   </div>
 </div>
 
@@ -17,6 +17,13 @@
      [leafletOptions]="options"
      [leafletLayers]="layers"
       >
+</div>
+
+
+<div class="give-blood__action">
+  <button mat-flat-button color="warn">Give blood, be the hero
+    <mat-icon>favorite</mat-icon>
+  </button>
 </div>
 
 
